@@ -2,7 +2,12 @@
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+body {
+  text-align: center;
+}
+
 .container {
+  display: inline-block;
   margin: 0px auto;
   text-align: center;
 }
