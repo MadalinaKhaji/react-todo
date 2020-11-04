@@ -6,8 +6,79 @@ body {
   text-align: center;
 }
 
-.container {
+.app-container {
   display: inline-block;
   margin: 0px auto;
   text-align: center;
+}
+
+.add-container {
+  display: inline-block;
+  margin-bottom: 1rem;
+  padding: 1rem;
+}
+
+.add-container, .add-container form input, .add-container select, .todo-item {
+  border: solid thin #cccccc;
+  border-radius: 0.5rem;
+}
+
+.add-container form, .add-container form input, .add-container form button, .add-container select {
+  display: inline-block;
+  font-size: 1rem;
+}
+
+.add-container form input, .add-container form button, .add-container select {
+  padding: 0.5rem;
+  outline: none;
+}
+
+.add-container form {
+  margin-right: 1rem;
+}
+
+.add-container form input {
+  margin-right: 0.25rem;
+}
+
+.plus-icon {
+  font-size: 1.25em;
+  vertical-align: bottom;
+}
+
+.add-container form button {
+  border: solid thin #ccebff;
+  border-radius: 0.5rem;
+  background-color: #33adff;
+  color: #fff;
+}
+
+.list-container {
+  padding: 1rem 1rem 0.5rem 1rem;
+  border: solid thin #cccccc;
+  border-radius: 0.5rem;
+}
+
+.todo-item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+
+.completed {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+.todo-item button {
+  background-color: #fff;
+  border: 0;
+}
+
+.delete-icon {
+  font-size: 1.5em;
+  color: #ff3300;
 }

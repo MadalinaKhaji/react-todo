@@ -10,13 +10,13 @@ const AddToDo  = ({ inputText, setInputText, todos, setTodos, filterOption, setF
     const submitHandler = (e) => {
         e.preventDefault();
 
-        // validate input
-
-        setTodos([
-            ...todos, { id: uniqid(), text: inputText, isComplete: false}
-        ]);
-
-        setInputText('');
+        if(inputText !== '') {
+            setTodos([
+                ...todos, { id: uniqid(), text: inputText, isComplete: false}
+            ]);
+    
+            setInputText('');
+        }
     };
 
     const filterHandler = (e) => {
@@ -24,13 +24,13 @@ const AddToDo  = ({ inputText, setInputText, todos, setTodos, filterOption, setF
     };
 
     return (
-        <div style={containerStyle}>
-            <form style={formStyle}>
-                <input value={inputText} onChange={inputTextHandler} type="text" style={inputStyle}/>
-                <button onClick={submitHandler} type="submit" style={addButtonStyle}>
-                    <span className="material-icons" style={iconStyle}>add</span> Add</button>
+        <div className="add-container">
+            <form>
+                <input value={inputText} onChange={inputTextHandler} type="text"/>
+                <button onClick={submitHandler} type="submit">
+                    <span className="material-icons plus-icon">add</span> Add</button>
             </form>
-            <select onClick={filterHandler} id="filterOptions" name="options" style={selectStyle}>
+            <select onClick={filterHandler} id="filterOptions" name="options">
                 <option value="all">All</option>
                 <option value="completed">Complete</option>
                 <option value="uncompleted">Uncompleted</option>
@@ -38,52 +38,5 @@ const AddToDo  = ({ inputText, setInputText, todos, setTodos, filterOption, setF
         </div>
     );
 }
-
-const containerStyle = {
-    display: 'inline-block',
-    padding: '1rem',
-    marginBottom: '1rem',
-    border: 'solid thin #cccccc',
-    borderRadius: '0.5rem',
-};
-
-const formStyle = {
-    display: 'inline-block',
-    margin: '0 1rem 0 0',
-};
-
-const inputStyle = {
-    display: 'inline-block',
-    marginRight: '0.25rem',
-    padding: '0.5rem',
-    border: 'solid thin #cccccc',
-    borderRadius: '0.5rem',
-    fontSize: '1rem',
-    outline: 'none'
-};
-
-const iconStyle = {
-    fontSize: '1.25em',
-    verticalAlign: 'bottom',
-};
-
-const addButtonStyle = {
-    padding: '0.5rem',
-    border: 'solid thin #ccebff',
-    borderRadius: '0.5rem',
-    backgroundColor: '#33adff',
-    color: '#fff',
-    fontSize: '1rem',
-    outline: 'none',
-};
-
-const selectStyle = {
-    display: 'inline-block',
-    padding: '0.5rem',
-    border: 'solid thin #cccccc',
-    borderRadius: '0.5rem',
-    fontSize: '1rem',
-    outline: 'none',
-};
 
 export default AddToDo;

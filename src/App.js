@@ -33,11 +33,11 @@ function App() {
         setFilteredTodos(todos);
         break;
     }
-  }
+  };
 
   const saveTodosToLocalStorage = () => {
     localStorage.setItem('todos', JSON.stringify(todos));
-  }
+  };
 
   const getTodosFromLocalStorage = () => {
     if(localStorage.getItem('todos') === null) {
@@ -46,10 +46,10 @@ function App() {
       let localTodos = JSON.parse(localStorage.getItem('todos'));
       setTodos(localTodos);
     }
-  }
+  };
 
   return (
-    <div className="container">
+    <div className="app-container">
       <h1>React To Do</h1>
       <AddToDo inputText={inputText} setInputText={setInputText} todos={todos} setTodos={setTodos} 
         filterOption={filterOption} setFilterOption={setFilterOption} />
